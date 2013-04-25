@@ -2,11 +2,7 @@
 	var methods = {
 		init : function( options ) { 
 			var _settings = $.extend({
-<<<<<<< HEAD
-				'waypoints'	:	'waypoints.min.js',
-=======
 				'waypoints'	:	'../js/waypoints.min.js',
->>>>>>> gh-pages
 				'mode'		:	(this.data('mode'))? this.data('mode') : 'auto',	
 				'fetch'		:	this.data('fetch'),	
 				'target'	:	(this.data('target')) ? $(this.data('target')) : this,
