@@ -79,6 +79,10 @@ This example loads modular.js only if data-fragments are required on the page
 
 &lt;/script&gt;
 </code></pre></li>
+<li>If storing scripts in a different directory, update the url parameter above to point to the location of modular.js or modular.min.js</li>
+<li>You may also need to update the location of waypoints.min.js by either editing the modular.js/modular.min.js file, or passing in the waypoints.min.js location as a parameter:
+<pre><code>$(this).modular({'waypoints':'../path/to/waypoints.min.js'});</code></pre>
+</li>
 </ol>
         </section>
 
