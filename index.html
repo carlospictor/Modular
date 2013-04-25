@@ -37,11 +37,53 @@
 
 <p>Inspired by the article here:
 <a href="http://filamentgroup.com/lab/ajax_includes_modular_content/">http://filamentgroup.com/lab/ajax_includes_modular_content/</a></p>
+<h2>Features</h2>
+<ul>
+	<li>Lightweight - 585 bytes minified and gzipped</li>
+	<li>Data attributes - no need to touch the javascript once in place</li>
+	<li>Events - data can be loaded automatically, on click or viewport</li>
+</ul>
+<p><a href="demo/">Demo page showing click and viewport loading of content</a></p>
+<h2>Implementation</h2>
+<ol>
+<li>Include jQuery in your page (ideally before the closing body tag)
+<pre><code>
+&lt;script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"&gt;&lt;/script&gt;
+</code></pre>
+</li>
+<li>Get all the files from the /dist directory in the download</li>
+<li>Include the modular.js or modular.min.js file after jQuery.<br/>
+This example loads modular.js only if data-fragments are required on the page
+<pre><code>
+&lt;script type="text/javascript"&gt;
+	$(document).ready(function () {
+			if ($('[data-fetch]').length > 0) {
+                $.ajax({
+                   	url: '../js/modular.js',
+                    dataType: 'script',
+                    cache: true,
+                    success: function (data) {
+                        $('[data-fetch]').each(function (index, value) {
+                            $(this).modular();
+                        });
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    }
+                });
+            }
+							
+		
+	});
 
-<p>But a custom version to teach myself how to code jQuery plugins from scratch.
-I also wanted to be able to have additional behaviours/interactions besides auto-loading. </p>
 
-<p>This script also allows click and viewport events to be utilised.</p>
+&lt;/script&gt;
+</code></pre></li>
+<li>If storing scripts in a different directory, update the url parameter above to point to the location of modular.js or modular.min.js</li>
+<li>You may also need to update the location of waypoints.min.js by either editing the modular.js/modular.min.js file, or passing in the waypoints.min.js location as a parameter:
+<pre><code>$(this).modular({'waypoints':'../path/to/waypoints.min.js'});</code></pre>
+</li>
+</ol>
         </section>
 
         <footer>
