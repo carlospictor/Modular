@@ -2,7 +2,7 @@
 	var methods = {
 		init : function( options ) { 
 			var _settings = $.extend({
-				'waypoints'	:	'waypoints.min.js',
+				'waypoints'	:	'../js/waypoints.min.js',
 				'mode'		:	(this.data('mode'))? this.data('mode') : 'auto',	
 				'fetch'		:	this.data('fetch'),	
 				'target'	:	(this.data('target')) ? $(this.data('target')) : this,
