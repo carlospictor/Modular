@@ -55,7 +55,6 @@
 							});
 						}
 					}
-					
 					return false;
 			});	
 		}
@@ -70,10 +69,4 @@
       		$.error( 'Method ' +  method + ' does not exist on jQuery.modular' );
     	}    
   	};
-
 })( jQuery );
-		
-							
-		
-
-		
