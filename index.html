@@ -45,14 +45,16 @@
 </ul>
 <p><a href="demo/">Demo page showing click and viewport loading of content</a></p>
 <h2>Implementation</h2>
-<p>Include jQuery in your page (ideally before the closing body tag)</p>
-<code>
+<ol>
+<li>Include jQuery in your page (ideally before the closing body tag)
+<pre><code>
 &lt;script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"&gt;&lt;/script&gt;
-</code>
-<p>Get all the files from the /dist directory in the download</p>
-<p>Include the modular.js or modular.min.js file after jQuery.</p>
-<p>This example loads modular.js only if data-fragments are required on the page</p>
-<code>
+</code></pre>
+</li>
+<li>Get all the files from the /dist directory in the download</li>
+<li>Include the modular.js or modular.min.js file after jQuery.<br/>
+This example loads modular.js only if data-fragments are required on the page
+<pre><code>
 &lt;script type="text/javascript"&gt;
 	$(document).ready(function () {
 			if ($('[data-fetch]').length > 0) {
@@ -76,7 +78,8 @@
 
 
 &lt;/script&gt;
-</code>
+</code></pre></li>
+</ol>
         </section>
 
         <footer>
